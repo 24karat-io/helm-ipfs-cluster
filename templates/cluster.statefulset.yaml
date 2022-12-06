@@ -48,6 +48,8 @@ spec:
             value: 2s # Speed up peer discovery
         image: "{{ $.Values.cluster.image.repository }}:{{ $.Values.cluster.image.tag | default $.Chart.AppVersion }}"
         ports:
+        - containerPort: 9094
+          name: http
         - containerPort: 9096
           name: p2p
         volumeMounts:

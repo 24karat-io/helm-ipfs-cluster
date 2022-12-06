@@ -12,6 +12,8 @@ metadata:
 spec:
   type: {{ $.Values.cluster.service.type | default $.Values.service.type }}
   ports:
+  - port: 9094
+    name: http
   - port: 9096
     name: p2p
     #  clusterIP: None
